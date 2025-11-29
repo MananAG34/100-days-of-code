@@ -9,19 +9,23 @@ dcba
 */
 
 #include <stdio.h>
-int main()
-{
-    char str[50];
 
-    int j = 0;
-    printf("enter a string in lowercase: ");
-    scanf("%50s", str);
-    for (int i = 0; str[i] <= '\0'; i++)
-    {
-        if (str[i] >= 'a' && str[i] <= 'z')
-        {
-            str[i] = str[j];
-            j--;
-        }
+int main() {
+    char str[100];
+    scanf("%s", str);
+    
+    // Print in reverse without calculating length first
+    int i = 0;
+    while (str[i] != '\0') {
+        i++;
     }
+    i--;  // Move to last character
+    
+    while (i >= 0) {
+        printf("%c", str[i]);
+        i--;
+    }
+    printf("\n");
+    
+    return 0;
 }
